@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>The Big Mac Index</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="static/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">The big mac index - Purchasing-power parity (PPP)</h1>
+                    </div>
+
+                    <!-- Content Row -->
+                  <div id="All" class="tabcontent">
+                    <div class="row">
+
+                        <!-- Country Base Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Country Base</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{datausa[0].country}}</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Base Currency Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Base Currency</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">$US American Dollar</div>
+                                        </div>
+                                        <div class="col-auto">
+                              
+                                          <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Big Mac Cost Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Big Mac Cost
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">$US{{datausa[0].local_price}}</div>
+                                                </div>
+                                                <div class="col">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            
+                                          <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Date</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">2022-01-31</div>
+                                        </div>
+                                        <div class="col-auto">
+                                    
+                                          <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                                              <!-- Bar Chart -->
+                        <div class="col-xl-6 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary"> Implied Exchange Rate against Actual Exchange Rate</h6>
+                                    
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div id="chart">
+   <embed type="image/svg+xml" src= {{ graph_ppp|safe }} />
+</div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bar Chart -->
+                        <div class="col-xl-6 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary"> Under(+) /Over(-) valuated against the dollar/GPD - Adjusted</h6>
+                                    
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div id="chart">
+   <embed type="image/svg+xml" src= {{ graph_val|safe }} />
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Map Chart -->
+                        <div class="col-xl-7 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Local Price of Big Mac per Country</h6>
+                                    
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <center>
+                                        <div id="chart">
+   <embed type="image/svg+xml" src= {{ graph_lp|safe }} />
+</div>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Info per Country -->
+                        <div class="col-xl-5 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary"> Information per Country</h6>
+                                    
+                                </div>
+                                <!-- Info per Country -->
+                                <div class="card-body">
+                                    <!-- Tab links -->
+<div class="warpper">
+  <input class="radio" id="one" name="group" type="radio" checked>
+  <input class="radio" id="two" name="group" type="radio">
+  <input class="radio" id="three" name="group" type="radio">
+  <input class="radio" id="four" name="group" type="radio">
+
+  <div class="tabs">
+    <label class="tab" id="one-tab" for="one">Canada</label>
+    <label class="tab" id="two-tab" for="two">Peru</label>
+    <label class="tab" id="three-tab" for="three">Poland</label>
+    <label class="tab" id="four-tab" for="four">Uruguay</label>
+  </div>
+
+              <div class="panels">
+                <div class="panel" id="one-panel">
+                  <div class="panel-title">Canada
+                  
+                  {% for i in range(4) %}
+                  {% if data[i].country == 'Canada' %}
+                    <img src={{country[i].flag}} width="60" height="20">
+                    
+                  {% endif %}
+                  {% endfor %}</div>
+                  {% for i in range(4) %}
+                  {% if data[i].country == 'Canada' %}
+                    <ul>
+                      {% for value in country[i].capital %}
+                      <li>Capital: {{ value}} </li>
+                      {% endfor %}
+                      <li>Geolocation: {{country[i].geolocation}} </li>
+                      <li>Map: <a href={{country[i].maps}}>View Map</a></li>
+                      <li>Population: {{country[i].population}} </li>
+                    </ul>
+
+                  <p>The Big Mac Index: </p>
+                  <ul>
+                    <li>Local Price: {{data[i].local_price}}</li>
+                    <li>Dollar Price: {{data[i].dollar_price}}</li>
+                    <li>Dollar Exchange: {{data[i].dollar_ex}}</li>
+                    <li>Purchasing-power parity: {{data[i].dollar_ppp}}</li>
+                    <li>Dollar Valuation: {{data[i].dollar_valuation}}%</li>
+                    <li>Dollar Valuation GDP: {{data[i].dollar_adj_valuation}}%</li>
+                  </ul>
+
+                  A Big Mac costs {{data[i].local_price}} canadian dollars in {{data[i].country}} and US${{datausa[0].local_price}} in the {{datausa[0].country}}. The implied exchange rate is {{data[i].dollar_price}}. The difference between this and the actual exchange rate, {{data[i].dollar_ex}}, suggests the local currency is 
+                  {% if data[i].dollar_valuation>0 %}
+                  {{data[i].dollar_valuation}}% overvalued.
+                  {% else %}
+                  {{data[i].dollar_valuation}}% undervalued.
+                  {% endif %}
+                   And based on differences in GDP per person, suggests the canadian dollar is 
+                  {% if data[i].dollar_adj_valuation>0 %}
+                  {{data[i].dollar_adj_valuation}}% overvalued.
+                  {% else %}
+                  {{data[i].dollar_adj_valuation}}% undervalued.
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+
+                  
+                </div>
+                <div class="panel" id="two-panel">
+                  <div class="panel-title">Peru
+                  
+                  {% for i in range(4) %}
+                  {% if data[i].country == 'Peru' %}
+                    <img src={{country[i].flag}} width="60" height="20">
+                    
+                  {% endif %}
+                  {% endfor %}</div>
+                  {% for i in range(4) %}
+                  {% if data[i].country == 'Peru' %}
+                    <ul>
+                      {% for value in country[i].capital %}
+                      <li>Capital: {{ value}} </li>
+                      {% endfor %}
+                      <li>Geolocation: {{country[i].geolocation}} </li>
+                      <li>Map: <a href={{country[i].maps}}>View Map</a></li>
+                      <li>Population: {{country[i].population}} </li>
+                    </ul>
+
+                  <p>The Big Mac Index: </p>
+                  <ul>
+                    <li>Local Price: {{data[i].local_price}}</li>
+                    <li>Dollar Price: {{data[i].dollar_price}}</li>
+                    <li>Dollar Exchange: {{data[i].dollar_ex}}</li>
+                    <li>Purchasing-power parity: {{data[i].dollar_ppp}}</li>
+                    <li>Dollar Valuation: {{data[i].dollar_valuation}}%</li>
+                    <li>Dollar Valuation GDP: {{data[i].dollar_adj_valuation}}%</li>
+                  </ul>
+
+                   A Big Mac costs {{data[i].local_price}} soles in {{data[i].country}} and US${{datausa[0].local_price}} in the {{datausa[0].country}}. The implied exchange rate is {{data[i].dollar_price}}. The difference between this and the actual exchange rate, {{data[i].dollar_ex}}, suggests the local currency is 
+                  {% if data[i].dollar_valuation>0 %}
+                  {{data[i].dollar_valuation}}% overvalued.
+                  {% else %}
+                  {{data[i].dollar_valuation}}% undervalued.
+                  {% endif %}
+                   And based on differences in GDP per person, suggests the Sol is 
+                  {% if data[i].dollar_adj_valuation>0 %}
+                  {{data[i].dollar_adj_valuation}}% overvalued.
+                  {% else %}
+                  {{data[i].dollar_adj_valuation}}% undervalued.
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+
+                </div>
+                <div class="panel" id="three-panel">
+                  <div class="panel-title">Poland
+                  
+                  {% for i in range(4) %}
+                  {% if data[i].country == 'Poland' %}
+                    <img src={{country[i].flag}} width="60" height="20">
+                    
+                  {% endif %}
+                  {% endfor %}</div>
+                  {% for i in range(4) %}
+                  {% if data[i].country == 'Poland' %}
+                    <ul>
+                      {% for value in country[i].capital %}
+                      <li>Capital: {{ value}} </li>
+                      {% endfor %}
+                      <li>Geolocation: {{country[i].geolocation}} </li>
+                      <li>Map: <a href={{country[i].maps}}>View Map</a></li>
+                      <li>Population: {{country[i].population}} </li>
+                    </ul>
+
+                  <p>The Big Mac Index: </p>
+                  <ul>
+                    <li>Local Price: {{data[i].local_price}}</li>
+                    <li>Dollar Price: {{data[i].dollar_price}}</li>
+                    <li>Dollar Exchange: {{data[i].dollar_ex}}</li>
+                    <li>Purchasing-power parity: {{data[i].dollar_ppp}}</li>
+                    <li>Dollar Valuation: {{data[i].dollar_valuation}}%</li>
+                    <li>Dollar Valuation GDP: {{data[i].dollar_adj_valuation}}%</li>
+                  </ul>
+                  
+                   A Big Mac costs {{data[i].local_price}} polish złoty in {{data[i].country}} and US${{datausa[0].local_price}} in the {{datausa[0].country}}. The implied exchange rate is {{data[i].dollar_price}}. The difference between this and the actual exchange rate, {{data[i].dollar_ex}}, suggests the local currency is 
+                  {% if data[i].dollar_valuation>0 %}
+                  {{data[i].dollar_valuation}}% overvalued.
+                  {% else %}
+                  {{data[i].dollar_valuation}}% undervalued.
+                  {% endif %}
+                   And based on differences in GDP per person, suggests the Polish złoty is 
+                  {% if data[i].dollar_adj_valuation>0 %}
+                  {{data[i].dollar_adj_valuation}}% overvalued.
+                  {% else %}
+                  {{data[i].dollar_adj_valuation}}% undervalued.
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+
+                </div>
+                <div class="panel" id="four-panel">
+                  <div class="panel-title">Uruguay
+                  
+                  {% for i in range(4) %}
+                  {% if data[i].country == 'Uruguay' %}
+                    <img src={{country[i].flag}} width="60" height="20">
+                    
+                  {% endif %}
+                  {% endfor %}</div>
+                  {% for i in range(4) %}
+                  {% if data[i].country == 'Uruguay' %}
+                    <ul>
+                      {% for value in country[i].capital %}
+                      <li>Capital: {{ value}} </li>
+                      {% endfor %}
+                      <li>Geolocation: {{country[i].geolocation}} </li>
+                      <li>Map: <a href={{country[i].maps}}>View Map</a></li>
+                      <li>Population: {{country[i].population}} </li>
+                    </ul>
+
+                  <p>The Big Mac Index: </p>
+                  <ul>
+                    <li>Local Price: {{data[i].local_price}}</li>
+                    <li>Dollar Price: {{data[i].dollar_price}}</li>
+                    <li>Dollar Exchange: {{data[i].dollar_ex}}</li>
+                    <li>Purchasing-power parity: {{data[i].dollar_ppp}}</li>
+                    <li>Dollar Valuation: {{data[i].dollar_valuation}}%</li>
+                    <li>Dollar Valuation GDP: {{data[i].dollar_adj_valuation}}%</li>
+                  </ul>
+                  
+                  A Big Mac costs {{data[i].local_price}} uruguayan peso in {{data[i].country}} and US${{datausa[0].local_price}} in the {{datausa[0].country}}. The implied exchange rate is {{data[i].dollar_price}}. The difference between this and the actual exchange rate, {{data[i].dollar_ex}}, suggests the local currency is 
+                  {% if data[i].dollar_valuation>0 %}
+                  {{data[i].dollar_valuation}}% overvalued.
+                  {% else %}
+                  {{data[i].dollar_valuation}}% undervalued.
+                  {% endif %}
+                   And based on differences in GDP per person, suggests the Uruguayan peso is 
+                  {% if data[i].dollar_adj_valuation>0 %}
+                  {{data[i].dollar_adj_valuation}}% overvalued.
+                  {% else %}
+                  {{data[i].dollar_adj_valuation}}% undervalued.
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                </div>
+                
+
+              </div>
+            </div>
+
+                  <style>
+
+
+.warpper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 0px 2px;
+  background: #32557f;
+  display: inline-block;
+  color: #fff;
+  border-radius: 3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+
+.panels {
+  background: #fff;
+  box-shadow: 0 2rem 2rem #00000080;
+  min-height: 400px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.panel {
+  display: none;
+  animation: fadein 0.8s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.panel-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.radio {
+  display: none;
+}
+
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel                    {
+  display: block;
+}
+
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab {
+  background: #fff;
+  color: #000;
+  border-top: 3px solid #32557f;
+}
+                  </style>
+                              
+                                </div>
+                            </div>
+                        </div>
+                      
+
+                      
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Content Column -->
+                        <div class="col-lg-6 mb-4">
+
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+
+
+
+
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+            
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="static/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="static/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="static/js/demo/chart-area-demo.js"></script>
+    <script src="static/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>
